@@ -2,4 +2,4 @@ using SymbolicIntegration
 using Base.Test
 
 # write your own tests here
-@test 1 == 2
+@mymacro f(x,y) = 3*x
