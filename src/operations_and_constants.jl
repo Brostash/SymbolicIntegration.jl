@@ -1,5 +1,5 @@
-supp_operations = Set([:sin,:+,:*,:-,:/])
-supp_symbols = Set([:e])
+const supp_operations = Set([:sin,:cos,:tan,:+,:*,:-,:/,:^])
+const supp_symbols = Set([:e])
 
 
 
@@ -22,5 +22,5 @@ end
 Checks if value is in current list of supported symbols or operations.
 """
 function is_supported(xp)
-    return is_supported_symbol(xp) || is_supported_operation(xp);
+    return is_supported_symbol(xp) || is_supported_operation(xp)
 end

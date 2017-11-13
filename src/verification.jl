@@ -26,7 +26,7 @@ IE: "5sin(x)", "x^2", or "supported_function_1(x)-supported_function_2(x)"
 """
 function verify_function(xp,var::Symbol)
     if (typeof(xp) <: Symbol)
-        if (xp != var) && is_supported(xp)
+        if (xp != var) && !is_supported(xp)
             error("Expression contains the symbol '$xp', which is not a supported constant or the current variable")
         end
     elseif !(typeof(xp) <: Number)
@@ -60,5 +60,6 @@ function verify(f)
     end
 
     var = verify_decl(f.args[1])
-    verify_function(f.args[2].args[2],var)
+    verify_function(f.args[2].args[length(f.args[2].args)],var)
+
 end

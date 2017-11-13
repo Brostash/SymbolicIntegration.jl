@@ -1,4 +1,12 @@
 using SymbolicIntegration
 using Base.Test
 
-@test SymbolicIntegration.is_supported(:+) == true
+for i in [:+,:-,:*,:/,:^,:cos,:sin,:tan]
+    @test SymbolicIntegration.is_supported(i)
+end
+
+for i in [:%,:!,:csc,:cot,:sec]
+    @test !SymbolicIntegration.is_supported(i)
+end
+
+@test SymbolicIntegration.is_supported(:e)
