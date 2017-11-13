@@ -1,10 +1,13 @@
 supp_operations = Set([:sin,:+,:*,:-,:/])
 supp_symbols = Set([:e])
 
+
+
+
 """
 Checks if value is in current list of supported operations.
 """
-function is_supported_operation(e)
+function is_supported_operation(xp)
     return contains(==,supp_operations,xp)
 end
 
