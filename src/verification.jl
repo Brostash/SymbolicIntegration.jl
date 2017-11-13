@@ -22,7 +22,7 @@ end
 
 """
 Checks the expression assignment of a symbolic declaration for correct form.
-IE: "sin(x)\*5", "x^2", or "supported_function_1(x)-supported_function_2(x)"
+IE: "sin(x)*5", "x^2", or "supported_function_1(x)-supported_function_2(x)"
 """
 function verify_function(xp,var::Symbol)
     if (typeof(xp) <: Symbol)
