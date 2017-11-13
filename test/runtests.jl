@@ -2,4 +2,4 @@ using SymbolicIntegration
 using Base.Test
 
 # write your own tests here
-@mymacro f(x,y) = 3*x
+@testset "Verification Tests" begin include("supported_functions_tests.jl") end
